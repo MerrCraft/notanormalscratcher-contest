@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scratch Project Description</title>
+</head>
+<body>
+  <p id="description">Loading description...</p>
+  Oh, uhh, congrats on finding my secret URL, uhhh, byee :3
+  <script>
+    const projectId = 1183363270;
+    const proxyUrl = 'https://corsproxy.io/?';
+    const apiUrl = `https://api.scratch.mit.edu/projects/${projectId}`;
+    console.log('Url: ' + apiUrl);
+    fetch(proxyUrl + apiUrl)
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('description').textContent = data.instructions;
+      })
+      .catch(err => {
+        console.error('Failed to fetch data:', err);
+        document.getElementById('description').textContent = 'Could not load description.';
+      });
+  </script>
+</body>
+</html>
