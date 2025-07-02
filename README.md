@@ -1,2 +1,0 @@
-# notanormalscratcher-contest
-yayyyyy
